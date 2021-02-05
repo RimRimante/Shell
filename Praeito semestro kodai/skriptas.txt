@@ -1,0 +1,12 @@
+#!/bin/bash
+mkdir A
+mkdir B
+cd A
+touch {1..6}.txt
+find *.txt | awk '{print "cia yra tekstas"> $1}'
+cp *.txt ../B
+rm *.txt
+cp ..
+cp B/*.txt A/
+rm -r B
+

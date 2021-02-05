@@ -1,0 +1,11 @@
+ Tikslas. Praktinis bazinių linux komandų taikymas bash apvalkale.
+
+Užduotis. Parašyti scenarijų realizuojantį tokius veiksmus:
+
+    Sukurti du katalogus.
+    Pirmame kataloge automatiškai sugeneruoti keletą failų (mažiausiai du).
+    Perkopijuoti pirmame kataloge sugeneruotus failus į antrą katalogą.
+    Ištrinti pirmame kataloge esančius failus.
+    Perkelti antrame kataloge esančius failus atgal į pirmą katalogą.
+    Ištrinti antrą katalogą.
+

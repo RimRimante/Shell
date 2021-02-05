@@ -1,0 +1,27 @@
+LINUX'U komandos:
+>> pwd -pasako kokioj direktorijoje esi. Duoda apsiolutu kelia
+>> ls -pasako kokie failai yra direktorijoje
+	> ls -a -parodys visus net ir pasleptus failus
+>> cd -pakeisti direktorija/ eiti kazkur kitur. Sita komanda jautri 
+space'ams todel jei varde yra space rasyti- "cd Raspberry\Pi" nei "cd Raspberry Pi".
+	> cd -be nieko nuves i namu direktorija
+	> cd .. -du taskiukai nuves vienu atgal folderi
+>> mkdir -sukuria nauja folderi arba direktorija pvz"mkdir DIY"
+>> rmdir -istrinti direktorija (tik ant tusciu folderiu)
+>> rm -naudoti jei norim istrinti direktorijoje esancius failus
+	> rm -r -naudoti kai norim istrinti tik direktorija (veikia kai yra irasyta kazkas)
+>> touch -sukuria nauja faila pvz"touch new.txt"
+>> man -jei norim suzinot daugiau apie komandas ir kaip jas naudoti, parodo manual
+pvz"man cd" parodo manual cd puslapi.
+>> cp -naudojam kopijuoti failus: reikia dvi lokacijas parasyt, kur ideti ir is kur kopijuoti
+pvz"cp new.txt /home/nayso/Music/ (daugiau pasidometi, neaisku:))
+>> mv -naudojamas judinti failus
+	>mv -taip pat galime naudoti pervadinimams, bet tada reikia dvieju argumentu
+	pvz"mv new.txt newer.txt"
+>> locate -naudojama atrasti kur yra failas, kaip window'suose search
+jis taip pat naudingas kai nezinai tikslaus pavadinimo. Jei zinai kad 
+pavadinime buvo zodis Hello ir kad surasti ji parasyk "locate -i hello"
+jei prisimeni du zodzius "locate -i *hello*this*"
+>> echo -leidizia perkelti duomenis, dazniausiai is teksto i faila. Pvz jei nori
+sukurti nauja faila su jau egzsituojanciu tekstu parasyk "echo hello, my name is alok >> new.txt"
+>> cat -parodo kas yra faile.
