@@ -1,0 +1,18 @@
+The Leader keys - Alt, Ctrl and Esc.
+Ctrl+h  -help
+Ctrl+g  -quit
+Ctrl+x k -kill buffer/kill file
+Ctrl+x Ctrl+f  -open file
+Ctrl+x b (file name)  -to create new file/buffer
+esc+number ctrl+{n,p}  -leidzia n eiluciu zemyn aukstyn
+---To move, we use: arrows, Ctrl+n, Ctrl+p, Ctrl+f, Ctrl+b
+---To select, we hold shift and press: arrows, Ctrl+n, Ctrl+p, Ctrl+f, Ctrl+b
+---To Copy(kill and save) = Alt +w
+---To Cut(kill) = Ctrl +w
+---To Paste(Yank) = Ctrl +y
+---To Undo = Ctrl+/
+
+
+
+
+
