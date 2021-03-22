@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# First line of the script is the shebang which tells the system how to execute
+
+echo Hello world! # => Hello world!
+
+# Each command starts on a new line, or after a semicolon:
+echo 'This is the first line'; echo 'This is the second line'
+# => This is the first line
+# => This is the second line
+
+# Declaring a variable looks like this:
+Variable="Some string"
+
+# Using the variable:
+echo $Variable # => Some string
+echo "$Variable" # => Some string
+echo '$Variable' # => $Variable
+# When you use the variable itself — assign it, export it, or else — you write
+# its name without $. If you want to use the variable's value, you should use $.
+# Note that ' (single quote) won't expand the variables!
+
+# Parameter expansion ${ }:
+echo ${Variable} # => Some string
+# This is a simple usage of parameter expansion
+# Parameter Expansion gets a value from a variable.
+# It "expands" or prints the value
+# During the expansion time the value or parameter can be modified
+# Below are other modifications that add onto this expansion
+
+# String substitution in variables
+echo ${Variable/Some/A} # => A string
+# This will substitute the first occurrence of "Some" with "A"
+
+# Substring from a variable
+Length=7
+echo ${Variable:0:Length} # => Some st
+# This will return only the first 7 characters of the value
+echo ${Variable: -5} # => tring
+# This will return the last 5 characters (note the space before -5)
+
+# String length
+echo ${#Variable} # => 11
+
+# Indirect expansion
+OtherVariable="Variable"
+echo ${!OtherVariable} # => Some String
+# This will expand the value of OtherVariable.
