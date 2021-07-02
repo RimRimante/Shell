@@ -1,0 +1,51 @@
+ssh_conn_map(){
+    if [[ $# -ne 2 ]]; then
+        exitt ":wrong number of parameters"
+    else
+        timeout 3 echo $1 | cut -d ' ' -f $2,$(($2+2))
+    fi
+}; readonly -f ssh_conn_map
+
+ip4_to_int(){
+    if [[ $# -ne 1 ]]; then
+       exitt ":wrong number of parameters"
+    else
+       first="$(echo "$1" | cut -d"." -f1)"
+       second="$(echo "$1" | cut -d"." -f2)"
+       third="$(echo "$1" | cut -d"." -f3)"
+       fourth="$(echo "$1" | cut -d"." -f4)"
+       local fin="$(($first*256**3+$second*256**2+$third*256+$fourth))"
+      timeout 3 echo $fin
+    fi
+}; readonly -f ip4_to_int
+bin_ops(){
+    if [[ $# -ne 3 ]]; then
+        exitt ":wrong number of parameters"
+    else
+        timeout 3 echo  $(($3 $1 $2))
+    fi
+}; readonly -f bin_ops
+gcd(){
+    if [[ $# -ne 2 ]]; then
+        exitt ":wrong number of parameters"
+    else
+        if (( $1 % $2 == 0 ))
+         then
+            timeout 3 echo "$2" >> "${FUNCNAME[0]}"
+             else
+                 gcd $2 $(( $1 % $2 ))
+        fi
+    fi
+}; readonly -f gcd
+main(){
+    for (( i = 0; i < 2; i++ ));
+    do
+        local port[$i]="$(ssh_conn_map "$SSH_CONNECTION" 2 | cut -d ' ' -f $(($i+1 )))"
+        local ip[$i]="$(ssh_conn_map "$SSH_CONNECTION" 1 | cut -d ' ' -f $(($i+1)))"
+        local ipInt[$i]="$(ip4_to_int "${ip[$i]}")"
+    done
+    local portsMultip="$(bin_ops \* "${port[0]}" "${port[1]}")"
+    local ipAdd="$(bin_ops + "${ipInt[0]}" "${ipInt[1]}")"
+    gcd $portsMultip $ipAdd
+}; readonly -f main
+main
